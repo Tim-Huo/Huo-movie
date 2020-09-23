@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * @description: 查询用户类
- * @author: huowencheng
+ * @author: Tim·Huo
  * @created: 2020/09/20 14:59
  */
 @Data

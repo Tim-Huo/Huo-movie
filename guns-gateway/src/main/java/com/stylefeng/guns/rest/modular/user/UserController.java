@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @description: 用户模块
- * @author: huowencheng
+ * @author: Tim·Huo
  * @created: 2020/09/21 21:33
  */
 @RestController
@@ -26,7 +26,7 @@ public class UserController {
     /**
      * 注册接口
      *
-     * @auther: huowencheng
+     * @auther: Tim·Huo
      * @param: userModer
      * @return: ResponseVO
      * @date: 2020/9/21 2020/9/21
@@ -53,7 +53,7 @@ public class UserController {
     /**
      * 用户验证(检查用户是否存在）
      *
-     * @auther: huowencheng
+     * @auther: Tim·Huo
      * @param: username
      * @return: ResponseVO
      * @date: 2020/9/22 2020/9/22
@@ -76,8 +76,7 @@ public class UserController {
     /**
      * 登出
      * 
-     * @auther: huowencheng
-     * @param: 
+     * @auther: Tim·Huo
      * @return: ResponseVO
      * @date: 2020/9/22 2020/9/22
      */
@@ -101,7 +100,7 @@ public class UserController {
     /**
      * 获取用户信息
      *
-     * @auther: huowencheng
+     * @auther: Tim·Huo
      * @param:
      * @return: ResponseVO
      * @date: 2020/9/22 2020/9/22
@@ -127,7 +126,7 @@ public class UserController {
     /**
      *  修改用户信息
      *
-     * @auther: huowencheng
+     * @auther: Tim·Huo
      * @param: UserInfoModel
      * @return: ResponseVO
      * @date: 2020/9/22 2020/9/22

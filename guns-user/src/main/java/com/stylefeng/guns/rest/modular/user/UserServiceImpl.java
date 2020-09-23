@@ -15,7 +15,7 @@ import java.util.Date;
 
 /**
  * @description:
- * @author: huowencheng
+ * @author: Tim·Huo
  * @created: 2020/09/17 07:53
  */
 @Component
@@ -28,9 +28,8 @@ public class UserServiceImpl implements UserAPI{
     /**
      * 登陆
      *
-     * @auther: huowencheng
+     * @auther: Tim·Huo
      * @param: username, password
-     * @return:
      * @date: 2020/9/21 2020/9/21
      */
     @Override
@@ -56,7 +55,7 @@ public class UserServiceImpl implements UserAPI{
     /**
      * 注册
      *
-     * @auther: huowencheng
+     * @auther: Tim·Huo
      * @param: UserModel
      * @return: boolean
      * @date: 2020/9/21 2020/9/21
@@ -85,7 +84,7 @@ public class UserServiceImpl implements UserAPI{
     /**
      * 用户验证
      *
-     * @auther: huowencheng
+     * @auther: Tim·Huo
      * @param: username
      * @return: boolean
      * @date: 2020/9/21 2020/9/21
@@ -107,7 +106,7 @@ public class UserServiceImpl implements UserAPI{
     /**
      * 根据id查询用户信息
      *
-     * @auther: huowencheng
+     * @auther: Tim·Huo
      * @param: uuid
      * @return: UserInfoModel
      * @date: 2020/9/21 2020/9/21
@@ -123,7 +122,7 @@ public class UserServiceImpl implements UserAPI{
     /**
      * 修改用户信息
      *
-     * @auther: huowencheng
+     * @auther: Tim·Huo
      * @param: UserInfoModel
      * @return: UserInfoModel
      * @date: 2020/9/21 2020/9/21
