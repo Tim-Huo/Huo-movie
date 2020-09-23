@@ -1,12 +1,12 @@
 # 分布式电影系统 
-![](![](https://img.shields.io/badge/build-passing-blue))
+![](https://img.shields.io/badge/build-passing-blue)
 ![](https://img.shields.io/badge/Guns-4.0-blue)
 ![](https://img.shields.io/badge/springBoot-2.0.1.RELEASE-blue)
 ![](https://img.shields.io/badge/dubbo-2.0.0-blue)
 
 ## 目录
 
-- [Guns V4.0 介绍](#Guns V4.0介绍)
+- [Guns4.0介绍](#Guns4.0介绍)
 - [管理系统功能](#管理系统功能)
 - [项目特点](#项目特点)
 - [开发说明](#开发说明) 
@@ -14,7 +14,7 @@
 
 
 
-## Guns V4.0 介绍
+## Guns4.0介绍
 Guns基于SpringBoot,致力于做更简洁的后台管理系统,完美整合springmvc + shiro + mybatis-plus + beetl!Guns项目代码简洁,注释丰富,上手容易,同时Guns包含许多基础模块(用户管理,角色管理,部门管理,字典管理等10个模块),可以直接作为一个后台管理系统的脚手架! 2018目标 `更简洁`,`更规范`!
 
 Guns v3.0新增rest api服务,提供对接服务端接口的支持,并利用jwt token鉴权机制给予客户端的访问权限,传输数据进行md5签名保证传输过程数据的安全性!
