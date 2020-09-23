@@ -1,11 +1,11 @@
-package com.stylefeng.guns.rest.modular.user;
+package com.stylefeng.guns.rest.modular;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.stylefeng.guns.api.user.UserAPI;
+import com.stylefeng.guns.api.user.user.UserAPI;
 import org.springframework.stereotype.Component;
 
 /**
- * @description: 测试
+ * @description: 测试类
  * @author: huowencheng
  * @created: 2020/09/20 13:50
  */

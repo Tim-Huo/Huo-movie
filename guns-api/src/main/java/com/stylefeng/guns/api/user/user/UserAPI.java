@@ -1,4 +1,7 @@
-package com.stylefeng.guns.api.user;
+package com.stylefeng.guns.api.user.user;
+
+import com.stylefeng.guns.api.user.user.vo.UserInfoModel;
+import com.stylefeng.guns.api.user.user.vo.UserModel;
 
 public interface UserAPI {
 
