@@ -1,4 +1,4 @@
-#分布式电影系统
+# 分布式电影系统 
 ![](![](https://img.shields.io/badge/build-passing-blue))
 ![](https://img.shields.io/badge/Guns-4.0-blue)
 ![](https://img.shields.io/badge/springBoot-2.0.1.RELEASE-blue)

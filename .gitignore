@@ -34,3 +34,4 @@ hs_err_pid*
 
 # Personal add
 .gz
+.DS_Store
