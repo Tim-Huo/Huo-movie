@@ -4,6 +4,8 @@
 ![](https://img.shields.io/badge/springBoot-2.0.1.RELEASE-blue)
 ![](https://img.shields.io/badge/dubbo-2.0.0-blue)
 
+<big>author： Tim·Huo</big>
+
 ## 目录
 
 - [Guns4.0介绍](#Guns4.0介绍)
