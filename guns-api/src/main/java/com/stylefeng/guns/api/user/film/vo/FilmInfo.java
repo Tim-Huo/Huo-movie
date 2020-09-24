@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @description: 热映
+ * @description: 电影信息
  * @author: Tim·Huo
  * @created: 2020/09/23 16:55
  */

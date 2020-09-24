@@ -18,8 +18,8 @@ public interface FilmServiceApi {
     /**
      * 获取正在热映的电影
      *
-     * @param isLimit
-     * @param nums
+     * @param isLimit :数量要求
+     * @param nums    :具体需要的查询的数量
      * @return
      */
     FilmVO getHotFilms(boolean isLimit, int nums, int nowPage, int sortId, int sourceId, int yearId, int catId);
@@ -54,7 +54,7 @@ public interface FilmServiceApi {
     List<FilmInfo> getBoxRanking();
 
     /**
-     * 获取受欢迎的榜单
+     * 获取受欢迎的榜单（人气排行榜）
      *
      * @return
      */

@@ -13,7 +13,7 @@
         <module>guns-core</module>
         <module>guns-rest</module>
         <module>guns-generator</module>
-        <!-- 网关 -->
+        <!-- 网关（消费者） -->
         <module>guns-gateway</module>
         <!-- dubbo接口 -->
         <module>guns-api</module>
