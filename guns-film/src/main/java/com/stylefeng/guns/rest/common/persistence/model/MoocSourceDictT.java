@@ -5,21 +5,18 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
-import lombok.Data;
-
 import java.io.Serializable;
 
 /**
  * <p>
- * 类型信息表
+ * 区域信息表
  * </p>
  *
  * @author Tim﹒Huo
- * @since 2020-09-23
+ * @since 2020-09-24
  */
-@Data
-@TableName("mooc_cat_dict_t")
-public class MoocCatDictT extends Model<MoocCatDictT> {
+@TableName("mooc_source_dict_t")
+public class MoocSourceDictT extends Model<MoocSourceDictT> {
 
     private static final long serialVersionUID = 1L;
 
@@ -35,9 +32,32 @@ public class MoocCatDictT extends Model<MoocCatDictT> {
     private String showName;
 
 
+    public Integer getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(Integer uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getShowName() {
+        return showName;
+    }
+
+    public void setShowName(String showName) {
+        this.showName = showName;
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.uuid;
     }
 
+    @Override
+    public String toString() {
+        return "MoocSourceDictT{" +
+        "uuid=" + uuid +
+        ", showName=" + showName +
+        "}";
+    }
 }

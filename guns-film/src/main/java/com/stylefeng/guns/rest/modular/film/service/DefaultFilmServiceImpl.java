@@ -4,14 +4,10 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.stylefeng.guns.api.user.film.FilmServiceApi;
-import com.stylefeng.guns.api.user.film.vo.BannerVO;
-import com.stylefeng.guns.api.user.film.vo.FilmInfo;
-import com.stylefeng.guns.api.user.film.vo.FilmVO;
+import com.stylefeng.guns.api.user.film.vo.*;
 import com.stylefeng.guns.api.util.DateUtil;
-import com.stylefeng.guns.rest.common.persistence.dao.MoocBannerTMapper;
-import com.stylefeng.guns.rest.common.persistence.dao.MoocFilmTMapper;
-import com.stylefeng.guns.rest.common.persistence.model.MoocBannerT;
-import com.stylefeng.guns.rest.common.persistence.model.MoocFilmT;
+import com.stylefeng.guns.rest.common.persistence.dao.*;
+import com.stylefeng.guns.rest.common.persistence.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -32,6 +28,15 @@ public class DefaultFilmServiceImpl implements FilmServiceApi {
 
     @Autowired
     private MoocFilmTMapper moocFilmTMapper;
+
+    @Autowired
+    private MoocCatDictTMapper moocCatDictTMapper;
+
+    @Autowired
+    private MoocYearDictTMapper moocYearDictTMapper;
+
+    @Autowired
+    private MoocSourceDictTMapper moocSourceDictTMapper;
 
     /**
      * 获取banner信息
@@ -184,7 +189,7 @@ public class DefaultFilmServiceImpl implements FilmServiceApi {
     }
 
     /**
-     * 获取前一百经典影片
+     * 获取前10经典影片
      *
      * @auther: Tim·Huo
      * @return: FilmInfo
@@ -192,7 +197,7 @@ public class DefaultFilmServiceImpl implements FilmServiceApi {
      */
     @Override
     public List<FilmInfo> getTop() {
-        // 条件 -> 正在上映的，评分前100名
+        // 条件 -> 正在上映的，评分前10名
         EntityWrapper<MoocFilmT> entityWrapper = new EntityWrapper<>();
         entityWrapper.eq("film_status", "3");
         Page<MoocFilmT> page = new Page<>(1, 10, "film_score");
@@ -200,4 +205,72 @@ public class DefaultFilmServiceImpl implements FilmServiceApi {
         List<FilmInfo> filmInfos = getFilmInfos(moocFilmTS);
         return filmInfos;
     }
+
+    /**
+     * 查询分类
+     *
+     * @auther: Tim·Huo
+     * @return: CatVO
+     * @date: 2020/9/24 3:10 下午
+     */
+    @Override
+    public List<CatVO> getCats() {
+        List<CatVO> catVOs = new ArrayList<>();
+        // 通过查询实体对象 -MoocCatDictT
+        List<MoocCatDictT> moocCats = moocCatDictTMapper.selectList(null);
+        //将实体对象转换为业务对象 -CatVO
+        for (MoocCatDictT moocCat : moocCats) {
+            CatVO catVO = new CatVO();
+            catVO.setCatName(moocCat.getShowName());
+            catVO.setCatId(moocCat.getUuid() + "");
+            catVOs.add(catVO);
+        }
+        return catVOs;
+    }
+
+    /**
+     * 查询片源
+     *
+     * @auther: Tim·Huo
+     * @return: SourceVO
+     * @date: 2020/9/24 3:11 下午
+     */
+    @Override
+    public List<SourceVO> getSources() {
+        List<SourceVO> sourceVOS = new ArrayList<>();
+        // 通过查询实体对象 -MoocSourceDictT
+        List<MoocSourceDictT> moocSourceDictTS = moocSourceDictTMapper.selectList(null);
+        //将实体对象转换为业务对象 -SourceVO
+        for (MoocSourceDictT moocSource : moocSourceDictTS) {
+            SourceVO sourceVO = new SourceVO();
+            sourceVO.setSourceName(moocSource.getShowName());
+            sourceVO.setSourceId(moocSource.getUuid() + "");
+            sourceVOS.add(sourceVO);
+        }
+        return sourceVOS;
+    }
+
+    /**
+     *
+     * 查询年代
+     * @auther: Tim·Huo
+     * @return: YearVO
+     * @date: 2020/9/24 3:12 下午
+     */
+    @Override
+    public List<YearVO> getYears() {
+        List<YearVO> yearVOS = new ArrayList<>();
+        // 通过查询实体对象 -MoocYearDictT
+        List<MoocYearDictT> moocYears = moocYearDictTMapper.selectList(null);
+        //将实体对象转换为业务对象 -YearVO
+        for (MoocYearDictT moocYear : moocYears) {
+            YearVO yearVO = new YearVO();
+            yearVO.setYearName(moocYear.getShowName());
+            yearVO.setYearId(moocYear.getUuid() + "");
+            yearVOS.add(yearVO);
+        }
+        return yearVOS;
+    }
+
+
 }
