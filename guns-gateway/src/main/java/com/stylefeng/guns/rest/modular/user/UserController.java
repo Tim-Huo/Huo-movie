@@ -1,11 +1,11 @@
 package com.stylefeng.guns.rest.modular.user;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.stylefeng.guns.api.user.user.UserAPI;
-import com.stylefeng.guns.api.user.user.vo.UserInfoModel;
-import com.stylefeng.guns.api.user.user.vo.UserModel;
+import com.stylefeng.guns.api.user.UserAPI;
+import com.stylefeng.guns.api.user.vo.UserInfoModel;
+import com.stylefeng.guns.api.user.vo.UserModel;
 import com.stylefeng.guns.rest.common.CurrentUser;
-import com.stylefeng.guns.rest.modular.vo.ResponseVO;
+import com.stylefeng.guns.rest.modular.vo.ResponseVo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,21 +32,21 @@ public class UserController {
      * @date: 2020/9/21 2020/9/21
      */
     @PostMapping("register")
-    public ResponseVO register(UserModel userModel) {
+    public ResponseVo register(UserModel userModel) {
 
         if(userModel.getUsername() == null || userModel.getUsername().trim().length() == 0) {
-            return ResponseVO.serviceFail("用户名不能为空");
+            return ResponseVo.serviceFail("用户名不能为空");
         }
         if(userModel.getPassword() == null || userModel.getPassword().trim().length() == 0) {
-            return ResponseVO.serviceFail("密码不能为空");
+            return ResponseVo.serviceFail("密码不能为空");
         }
 
         //注册
         boolean isSuccess = userAPI.register(userModel);
         if(isSuccess) {
-            return ResponseVO.success("注册成功");
+            return ResponseVo.success("注册成功");
         } else {
-            return ResponseVO.serviceFail("注册失败");
+            return ResponseVo.serviceFail("注册失败");
         }
     }
 
@@ -59,17 +59,17 @@ public class UserController {
      * @date: 2020/9/22 2020/9/22
      */
     @PostMapping("check")
-    public ResponseVO check(String username) {
+    public ResponseVo check(String username) {
         if(username != null && username.trim().length() > 0) {
             //返回true，表示用户名可用
             boolean notExists = userAPI.checkUsername(username);
             if(notExists) {
-                return ResponseVO.success("用户名不存在");
+                return ResponseVo.success("用户名不存在");
             } else {
-                return ResponseVO.serviceFail("用户名已存在");
+                return ResponseVo.serviceFail("用户名已存在");
             }
         } else {
-            return ResponseVO.serviceFail("用户名不能为空");
+            return ResponseVo.serviceFail("用户名不能为空");
         }
     }
 
@@ -81,7 +81,7 @@ public class UserController {
      * @date: 2020/9/22 2020/9/22
      */
     @GetMapping("logout")
-    public ResponseVO logout() {
+    public ResponseVo logout() {
 
         /*
         * 分析：
@@ -94,7 +94,7 @@ public class UserController {
         * 此实现：
         *   1、前端删除掉JWT
         * */
-        return ResponseVO.success("用户退出成功");
+        return ResponseVo.success("用户退出成功");
     }
 
     /**
@@ -106,7 +106,7 @@ public class UserController {
      * @date: 2020/9/22 2020/9/22
      */
     @GetMapping("getUserInfo")
-    public ResponseVO getUserInfo() {
+    public ResponseVo getUserInfo() {
 
         //获取当前用户
         String userId = CurrentUser.getCurrentUser();
@@ -114,12 +114,12 @@ public class UserController {
             int uuid = Integer.parseInt(userId);
             UserInfoModel userInfo = userAPI.getUserInfo(uuid);
             if(userInfo != null) {
-                return ResponseVO.success(userInfo);
+                return ResponseVo.success(userInfo);
             } else {
-                return ResponseVO.serviceFail("用户信息查询失败");
+                return ResponseVo.serviceFail("用户信息查询失败");
             }
         } else {
-            return ResponseVO.serviceFail("用户未登陆");
+            return ResponseVo.serviceFail("用户未登陆");
         }
     }
 
@@ -132,24 +132,24 @@ public class UserController {
      * @date: 2020/9/22 2020/9/22
      */
     @PostMapping("updateUserInfo")
-    public ResponseVO updateUserInfo(UserInfoModel userInfoModel) {
+    public ResponseVo updateUserInfo(UserInfoModel userInfoModel) {
 
         //获取当前用户
         String userId = CurrentUser.getCurrentUser();
         if(userId != null && userId.trim().length() > 0) {
             int uuid = Integer.parseInt(userId);
             if(uuid != userInfoModel.getUuid()) {
-                return ResponseVO.serviceFail("请修改您个人的用户信息");
+                return ResponseVo.serviceFail("请修改您个人的用户信息");
             }
 
             UserInfoModel userInfo = userAPI.udpateUserInfo(userInfoModel);
             if(userInfo != null) {
-                return ResponseVO.success(userInfo);
+                return ResponseVo.success(userInfo);
             } else {
-                return ResponseVO.serviceFail("用户信息修改失败");
+                return ResponseVo.serviceFail("用户信息修改失败");
             }
         } else {
-            return ResponseVO.serviceFail("用户未登陆");
+            return ResponseVo.serviceFail("用户未登陆");
         }
     }
 

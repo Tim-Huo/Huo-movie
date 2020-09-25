@@ -1,8 +1,8 @@
 package com.stylefeng.guns.rest.modular.film.vo;
 
-import com.stylefeng.guns.api.user.film.vo.CatVO;
-import com.stylefeng.guns.api.user.film.vo.SourceVO;
-import com.stylefeng.guns.api.user.film.vo.YearVO;
+import com.stylefeng.guns.api.film.vo.CatVO;
+import com.stylefeng.guns.api.film.vo.SourceVO;
+import com.stylefeng.guns.api.film.vo.YearVO;
 import lombok.Data;
 
 import java.io.Serializable;

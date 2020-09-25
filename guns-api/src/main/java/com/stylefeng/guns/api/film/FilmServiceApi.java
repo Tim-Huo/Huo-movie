@@ -1,6 +1,6 @@
-package com.stylefeng.guns.api.user.film;
+package com.stylefeng.guns.api.film;
 
-import com.stylefeng.guns.api.user.film.vo.*;
+import com.stylefeng.guns.api.film.vo.*;
 
 import java.util.List;
 
@@ -91,11 +91,11 @@ public interface FilmServiceApi {
     /**
      * 根据影片ID或者名称获取影片信息
      *
-     * @param searchType
-     * @param searchParam
+     * @param searchType  影片ID
+     * @param searchParam 电影名称
      * @return
      */
-//    FilmDetailVO getFilmDetail(int searchType, String searchParam);
+    FilmDetailVO getFilmDetail(int searchType, String searchParam);
 
     /**
      * 获取影片描述信息

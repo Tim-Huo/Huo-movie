@@ -1,4 +1,4 @@
-package com.stylefeng.guns.api.user.film.vo;
+package com.stylefeng.guns.api.film.vo;
 
 import lombok.Data;
 
@@ -17,4 +17,8 @@ public class FilmVO implements Serializable {
     private int filmNum;
 
     private List<FilmInfo> filmInfo;
+
+    private int TotalPage;
+
+    private int nowPage;
 }
