@@ -103,7 +103,7 @@ public interface FilmServiceApi {
      * @param filmId
      * @return
      */
-//    FilmDescVO getFilmDesc(String filmId);
+    FilmDescVO getFilmDesc(String filmId);
 
     /**
      * 获取图片信息
@@ -111,7 +111,7 @@ public interface FilmServiceApi {
      * @param filmId
      * @return
      */
-//    ImgVO getImg(String filmId);
+    ImgVO getImg(String filmId);
 
     /**
      * 获取导演信息
@@ -119,12 +119,12 @@ public interface FilmServiceApi {
      * @param filmId
      * @return
      */
-//    ActorVO getDectInfo(String filmId);
+    ActorVO getDectInfo(String filmId);
 
     /**
      * 获取演员信息
      * @param filmId
      * @return
      */
-//    List<ActorVO> getActors(String filmId);
+    List<ActorVO> getActors(String filmId);
 }

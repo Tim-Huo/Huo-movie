@@ -33,10 +33,16 @@ public class DefaultFilmServiceImpl implements FilmServiceApi {
     private MoocCatDictTMapper moocCatDictTMapper;
 
     @Autowired
+    private MoocSourceDictTMapper moocSourceDictTMapper;
+
+    @Autowired
     private MoocYearDictTMapper moocYearDictTMapper;
 
     @Autowired
-    private MoocSourceDictTMapper moocSourceDictTMapper;
+    private MoocFilmInfoTMapper moocFilmInfoTMapper;
+
+    @Autowired
+    private MoocActorTMapper moocActorTMapper;
 
     /**
      * 获取banner信息
@@ -404,7 +410,100 @@ public class DefaultFilmServiceImpl implements FilmServiceApi {
      */
     @Override
     public FilmDetailVO getFilmDetail(int searchType, String searchParam) {
-        return null;
+        FilmDetailVO filmDetailVO;
+        // searchType 1-按名称 2-按ID
+        if (searchType == 1) {
+            filmDetailVO = moocFilmTMapper.getFilmDetailByName("%" + searchParam + "%");
+        } else {
+            filmDetailVO = moocFilmTMapper.getFilmDetailById(searchParam);
+        }
+        return filmDetailVO;
+    }
+
+    /**
+     * 获取影片描述信息
+     *
+     * @auther: Tim·Huo
+     * @param: filmId
+     * @return: FilmDescVO
+     * @date: 2020/9/25 9:29 下午
+     */
+    @Override
+    public FilmDescVO getFilmDesc(String filmId) {
+        MoocFilmInfoT moocFilmInfoT = getFilmInfo(filmId);
+        FilmDescVO filmDescVO = new FilmDescVO();
+        filmDescVO.setBiography(moocFilmInfoT.getBiography());
+        filmDescVO.setFilmId(filmId);
+
+        return filmDescVO;
+    }
+
+    /**
+     * 获取图片信息
+     *
+     * @auther: Tim·Huo
+     * @param: filmId
+     * @return: ImgVO
+     * @date: 2020/9/25 9:34 下午
+     */
+    @Override
+    public ImgVO getImg(String filmId) {
+        MoocFilmInfoT moocFilmInfoT = getFilmInfo(filmId);
+        String filmImgStr = moocFilmInfoT.getFilmImgs();
+        // 图片地址以逗号分隔的链接URL
+        String[] filImgs = filmImgStr.split(",");
+        ImgVO imgVO = new ImgVO();
+        imgVO.setMainImg(filImgs[0]);
+        imgVO.setImg01(filImgs[1]);
+        imgVO.setImg02(filImgs[2]);
+        imgVO.setImg03(filImgs[3]);
+        imgVO.setImg04(filImgs[4]);
+
+        return imgVO;
+    }
+
+    /**
+     * 获取导演信息
+     *
+     * @auther: Tim·Huo
+     * @param: filmId
+     * @return: ActorVO
+     * @date: 2020/9/25 9:58 下午
+     */
+    @Override
+    public ActorVO getDectInfo(String filmId) {
+        MoocFilmInfoT moocFilmInfoT = getFilmInfo(filmId);
+        // 获取导演编号
+        Integer directorId = moocFilmInfoT.getDirectorId();
+        MoocActorT moocActorT = moocActorTMapper.selectById(directorId);
+        ActorVO actorVO = new ActorVO();
+        actorVO.setImgAddress(moocActorT.getActorImg());
+        actorVO.setDirectorName(moocActorT.getActorName());
+
+        return actorVO;
+    }
+
+    /**
+     * 获取演员信息
+     *
+     * @auther: Tim·Huo
+     * @param: filmId
+     * @return: ActorVO
+     * @date: 2020/9/25 10:05 下午
+     */
+    @Override
+    public List<ActorVO> getActors(String filmId) {
+        List<ActorVO> actors = moocActorTMapper.getActors(filmId);
+
+        return actors;
+    }
+
+    private MoocFilmInfoT getFilmInfo(String filmId) {
+        MoocFilmInfoT moocFilmInfoT = new MoocFilmInfoT();
+        moocFilmInfoT.setFilmId(filmId);
+        moocFilmInfoT = moocFilmInfoTMapper.selectOne(moocFilmInfoT);
+
+        return moocFilmInfoT;
     }
 
 
