@@ -21,6 +21,8 @@
         <module>guns-user</module>
         <!-- 影片模块（提供者） -->
         <module>guns-film</module>
+        <!-- 影院模块（提供者） -->
+        <module>guns-cinema</module>
     </modules>
 
     <parent>

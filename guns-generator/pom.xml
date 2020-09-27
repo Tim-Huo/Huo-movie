@@ -29,6 +29,10 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generate</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.stylefeng</groupId>
+            <artifactId>guns-core</artifactId>
+        </dependency>
     </dependencies>
 
 
