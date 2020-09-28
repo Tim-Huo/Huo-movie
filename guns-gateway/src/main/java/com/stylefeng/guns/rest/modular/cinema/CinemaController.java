@@ -20,7 +20,8 @@ import java.util.List;
 @RequestMapping("/cinema/")
 public class CinemaController {
 
-    @Reference(interfaceClass = CinemaServiceAPI.class, check = false)
+    //cache = "lru" ： 启动dubbo本地结果缓存
+    @Reference(interfaceClass = CinemaServiceAPI.class, cache = "lru", connections = 10, check = false)
     private CinemaServiceAPI cinemaServiceAPI;
 
     private static final String IMG_PRE = "http://img.meetingshop.cn/";
