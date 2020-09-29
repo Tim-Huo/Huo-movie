@@ -87,4 +87,13 @@ public interface CinemaServiceAPI {
      */
     FilmInfoVO getFilmInfoByFieldId(int fieldId);
 
+    /**
+     * 该部分是订单模块需要的内容
+     *
+     * @auther: Tim_Huo
+     * @param: fieldId 播放场次的编号
+     * @return: OrderQueryVO
+     * @date: 2020/9/29 9:40 上午
+     */
+    OrderQueryVO getOrderNeeds(int fieldId);
 }

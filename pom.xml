@@ -4,6 +4,23 @@
     <groupId>com.stylefeng</groupId>
     <artifactId>guns-parent</artifactId>
     <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.stylefeng</groupId>
+            <artifactId>guns-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.6.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.6</version>
+        </dependency>
+    </dependencies>
 
     <name>guns-parent</name>
     <packaging>pom</packaging>
@@ -15,7 +32,7 @@
         <module>guns-generator</module>
         <!-- 网关（消费者） -->
         <module>guns-gateway</module>
-        <!-- dubbo接口 -->
+        <!-- dubbo接口（服务者与提供者公用）-->
         <module>guns-api</module>
         <!-- 用户模块（提供者） -->
         <module>guns-user</module>
@@ -23,6 +40,8 @@
         <module>guns-film</module>
         <!-- 影院模块（提供者） -->
         <module>guns-cinema</module>
+        <!-- 订单模块（提供者） -->
+        <module>guns-order</module>
     </modules>
 
     <parent>

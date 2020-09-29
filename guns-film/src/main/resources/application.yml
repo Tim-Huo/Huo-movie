@@ -1,3 +1,7 @@
+rest:
+  auth-open: false #jwt鉴权机制是否开启(true或者false)
+  sign-open: false #签名机制是否开启(true或false)
+
 jwt:
   header: Authorization   #http请求头所需要的字段
   secret: mySecret        #jwt秘钥
@@ -24,17 +28,17 @@ mybatis-plus:
 
 spring:
   application:
-    name: meeting-gateway
+    name: meeting-user
   dubbo:
-      server: true
-      registry: zookeeper://localhost:2181
-      protocol:
-        name: dubbo
-        port: 20882
+    server: true
+    registry: zookeeper://localhost:2181
+    protocol:
+      name: dubbo
+      port: 20882
   datasource:
       url: jdbc:mysql://127.0.0.1:3306/guns_rest?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
       username: root
-      password: 123456
+      password:
       filters: log4j,wall,mergeStat
 
 logging:

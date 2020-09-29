@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * 区域信息表 Mapper 接口
  * </p>
  *
- * @author Tim﹒Huo
- * @since 2020-09-24
+ * @author jiangzh
+ * @since 2018-08-27
  */
 public interface MoocSourceDictTMapper extends BaseMapper<MoocSourceDictT> {
 

@@ -2,7 +2,7 @@ package com.stylefeng.guns.rest.common;
 
 /**
  * @description: 将id放进线程中
- * @author: huowencheng
+ * @author: Tim_Huo
  * @created: 2020/09/20 21:32
  */
 public class CurrentUser {

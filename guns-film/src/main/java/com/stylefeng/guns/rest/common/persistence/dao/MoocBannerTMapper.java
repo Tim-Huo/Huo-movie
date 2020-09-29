@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * banner信息表 Mapper 接口
  * </p>
  *
- * @author Tim﹒Huo
- * @since 2020-09-23
+ * @author jiangzh
+ * @since 2018-08-26
  */
 public interface MoocBannerTMapper extends BaseMapper<MoocBannerT> {
 

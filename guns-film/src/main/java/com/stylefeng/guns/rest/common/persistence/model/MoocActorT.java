@@ -12,8 +12,8 @@ import java.io.Serializable;
  * 演员表
  * </p>
  *
- * @author Tim﹒Huo
- * @since 2020-09-23
+ * @author jiangzh
+ * @since 2018-08-26
  */
 @TableName("mooc_actor_t")
 public class MoocActorT extends Model<MoocActorT> {

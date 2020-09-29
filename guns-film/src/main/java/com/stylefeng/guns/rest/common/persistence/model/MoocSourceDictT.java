@@ -12,8 +12,8 @@ import java.io.Serializable;
  * 区域信息表
  * </p>
  *
- * @author Tim﹒Huo
- * @since 2020-09-24
+ * @author jiangzh
+ * @since 2018-08-27
  */
 @TableName("mooc_source_dict_t")
 public class MoocSourceDictT extends Model<MoocSourceDictT> {

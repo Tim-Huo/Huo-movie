@@ -12,8 +12,8 @@ import java.io.Serializable;
  * banner信息表
  * </p>
  *
- * @author Tim﹒Huo
- * @since 2020-09-23
+ * @author jiangzh
+ * @since 2018-08-26
  */
 @TableName("mooc_banner_t")
 public class MoocBannerT extends Model<MoocBannerT> {

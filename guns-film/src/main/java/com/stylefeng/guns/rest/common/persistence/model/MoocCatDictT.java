@@ -5,8 +5,6 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
-import lombok.Data;
-
 import java.io.Serializable;
 
 /**
@@ -14,10 +12,9 @@ import java.io.Serializable;
  * 类型信息表
  * </p>
  *
- * @author Tim﹒Huo
- * @since 2020-09-23
+ * @author jiangzh
+ * @since 2018-08-26
  */
-@Data
 @TableName("mooc_cat_dict_t")
 public class MoocCatDictT extends Model<MoocCatDictT> {
 
@@ -35,9 +32,32 @@ public class MoocCatDictT extends Model<MoocCatDictT> {
     private String showName;
 
 
+    public Integer getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(Integer uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getShowName() {
+        return showName;
+    }
+
+    public void setShowName(String showName) {
+        this.showName = showName;
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.uuid;
     }
 
+    @Override
+    public String toString() {
+        return "MoocCatDictT{" +
+        "uuid=" + uuid +
+        ", showName=" + showName +
+        "}";
+    }
 }

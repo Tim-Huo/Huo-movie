@@ -11,15 +11,16 @@
         <result column="film_score" property="filmScore" />
         <result column="film_preSaleNum" property="filmPresalenum" />
         <result column="film_box_office" property="filmBoxOffice" />
-        <result column="film_source" property="filmSource" />
         <result column="film_cats" property="filmCats" />
         <result column="film_area" property="filmArea" />
         <result column="film_date" property="filmDate" />
         <result column="film_time" property="filmTime" />
         <result column="film_status" property="filmStatus" />
+        <result column="film_source" property="filmSource" />
     </resultMap>
 
-    <select id="getFilmDetailByName" parameterType="string" resultType="com.stylefeng.guns.api.film.vo.FilmDetailVO">
+
+    <select id="getFilmDetailByName" parameterType="java.lang.String" resultType="com.stylefeng.guns.api.film.vo.FilmDetailVO">
           SELECT
                 film.uuid AS filmId,
                 film.film_name AS filmName,
@@ -38,7 +39,7 @@
           AND film.film_name LIKE #{filmName}
     </select>
 
-    <select id="getFilmDetailById" parameterType="string" resultType="com.stylefeng.guns.api.film.vo.FilmDetailVO">
+    <select id="getFilmDetailById" parameterType="java.lang.String" resultType="com.stylefeng.guns.api.film.vo.FilmDetailVO">
       SELECT
             film.uuid AS filmId,
             film.film_name AS filmName,

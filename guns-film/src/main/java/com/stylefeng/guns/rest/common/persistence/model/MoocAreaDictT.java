@@ -9,11 +9,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 地域信息表
+ * 区域信息表
  * </p>
  *
- * @author Tim﹒Huo
- * @since 2020-09-23
+ * @author jiangzh
+ * @since 2018-08-26
  */
 @TableName("mooc_area_dict_t")
 public class MoocAreaDictT extends Model<MoocAreaDictT> {

@@ -12,8 +12,8 @@ import java.io.Serializable;
  * 年代信息表
  * </p>
  *
- * @author Tim﹒Huo
- * @since 2020-09-23
+ * @author jiangzh
+ * @since 2018-08-26
  */
 @TableName("mooc_year_dict_t")
 public class MoocYearDictT extends Model<MoocYearDictT> {

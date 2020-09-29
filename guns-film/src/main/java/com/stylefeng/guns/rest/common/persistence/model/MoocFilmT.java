@@ -1,24 +1,21 @@
 package com.stylefeng.guns.rest.common.persistence.model;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
-import lombok.Data;
-
-import java.io.Serializable;
 import java.util.Date;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableName;
+import java.io.Serializable;
 
 /**
  * <p>
  * 影片主表
  * </p>
  *
- * @author Tim﹒Huo
- * @since 2020-09-23
+ * @author jiangzh
+ * @since 2018-08-26
  */
-@Data
 @TableName("mooc_film_t")
 public class MoocFilmT extends Model<MoocFilmT> {
 
@@ -63,9 +60,9 @@ public class MoocFilmT extends Model<MoocFilmT> {
      * 影片片源，参照片源字典表
      */
     @TableField("film_source")
-    private Integer filmSource;
+    private String filmSource;
     /**
-     * 影片分类，参照分类表,多个分类以#分割
+     * 影片分类，参照分类表,多个分类以,分割
      */
     @TableField("film_cats")
     private String filmCats;
@@ -90,9 +87,131 @@ public class MoocFilmT extends Model<MoocFilmT> {
     @TableField("film_status")
     private Integer filmStatus;
 
+
+    public String getFilmSource() {
+        return filmSource;
+    }
+
+    public void setFilmSource(String filmSource) {
+        this.filmSource = filmSource;
+    }
+
+    public Integer getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(Integer uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getFilmName() {
+        return filmName;
+    }
+
+    public void setFilmName(String filmName) {
+        this.filmName = filmName;
+    }
+
+    public Integer getFilmType() {
+        return filmType;
+    }
+
+    public void setFilmType(Integer filmType) {
+        this.filmType = filmType;
+    }
+
+    public String getImgAddress() {
+        return imgAddress;
+    }
+
+    public void setImgAddress(String imgAddress) {
+        this.imgAddress = imgAddress;
+    }
+
+    public String getFilmScore() {
+        return filmScore;
+    }
+
+    public void setFilmScore(String filmScore) {
+        this.filmScore = filmScore;
+    }
+
+    public Integer getFilmPresalenum() {
+        return filmPresalenum;
+    }
+
+    public void setFilmPresalenum(Integer filmPresalenum) {
+        this.filmPresalenum = filmPresalenum;
+    }
+
+    public Integer getFilmBoxOffice() {
+        return filmBoxOffice;
+    }
+
+    public void setFilmBoxOffice(Integer filmBoxOffice) {
+        this.filmBoxOffice = filmBoxOffice;
+    }
+
+    public String getFilmCats() {
+        return filmCats;
+    }
+
+    public void setFilmCats(String filmCats) {
+        this.filmCats = filmCats;
+    }
+
+    public Integer getFilmArea() {
+        return filmArea;
+    }
+
+    public void setFilmArea(Integer filmArea) {
+        this.filmArea = filmArea;
+    }
+
+    public Integer getFilmDate() {
+        return filmDate;
+    }
+
+    public void setFilmDate(Integer filmDate) {
+        this.filmDate = filmDate;
+    }
+
+    public Date getFilmTime() {
+        return filmTime;
+    }
+
+    public void setFilmTime(Date filmTime) {
+        this.filmTime = filmTime;
+    }
+
+    public Integer getFilmStatus() {
+        return filmStatus;
+    }
+
+    public void setFilmStatus(Integer filmStatus) {
+        this.filmStatus = filmStatus;
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.uuid;
     }
 
+    @Override
+    public String toString() {
+        return "MoocFilmT{" +
+        "uuid=" + uuid +
+        ", filmName=" + filmName +
+        ", filmType=" + filmType +
+        ", imgAddress=" + imgAddress +
+        ", filmScore=" + filmScore +
+        ", filmPresalenum=" + filmPresalenum +
+        ", filmBoxOffice=" + filmBoxOffice +
+        ", filmCats=" + filmCats +
+        ", filmArea=" + filmArea +
+        ", filmDate=" + filmDate +
+        ", filmTime=" + filmTime +
+        ", filmStatus=" + filmStatus +
+        "}";
+    }
 }
