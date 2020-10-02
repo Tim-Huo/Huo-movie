@@ -2,6 +2,7 @@ package com.stylefeng.guns.rest.common.persistence.model;
 
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 
 import java.io.Serializable;
@@ -28,7 +29,7 @@ public class MoocOrder2018T extends Model<MoocOrder2018T> {
     /**
      * 影院编号
      */
-    @TableField("cinema_id")
+    @TableId("cinema_id")
     private Integer cinemaId;
     /**
      * 放映场次编号

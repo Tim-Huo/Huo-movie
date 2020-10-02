@@ -247,5 +247,64 @@ public class DefaultOrderService implements OrderServiceAPI {
         }
     }
 
+    /**
+     * 根据订单编号获取订单信息
+     *
+     * @auther: Tim_Huo
+     * @param: orderId 订单编号
+     * @return: OrderVO
+     * @date: 2020/9/30 5:25 下午
+     */
+    @Override
+    public OrderVO getOrderInfoById(String orderId) {
+        OrderVO orderInfoById = moocOrderTMapper.getOrderInfoById(orderId);
+
+        return orderInfoById;
+    }
+
+    /**
+     * 成功订单
+     *
+     * @auther: Tim_Huo
+     * @param: orderId 订单编号
+     * @return: boolean
+     * @date: 2020/9/30 5:33 下午
+     */
+    @Override
+    public boolean paySuccess(String orderId) {
+        MoocOrderT moocOrderT = new MoocOrderT();
+        moocOrderT.setUuid(orderId);
+        moocOrderT.setOrderStatus(1);
+
+        Integer integer = moocOrderTMapper.updateById(moocOrderT);
+        if(integer>=1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * 失败订单
+     *
+     * @auther: Tim_Huo
+     * @param: orderId 订单编号
+     * @return: boolean
+     * @date: 2020/9/30 5:35 下午
+     */
+    @Override
+    public boolean payFail(String orderId) {
+        MoocOrderT moocOrderT = new MoocOrderT();
+        moocOrderT.setUuid(orderId);
+        moocOrderT.setOrderStatus(2);
+
+        Integer integer = moocOrderTMapper.updateById(moocOrderT);
+        if(integer>=1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
 }

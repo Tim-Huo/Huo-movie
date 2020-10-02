@@ -34,14 +34,16 @@
         <module>guns-gateway</module>
         <!-- dubbo接口（服务者与提供者公用）-->
         <module>guns-api</module>
-        <!-- 用户模块（提供者） -->
+        <!-- 用户模块 -->
         <module>guns-user</module>
-        <!-- 影片模块（提供者） -->
+        <!-- 影片模块 -->
         <module>guns-film</module>
-        <!-- 影院模块（提供者） -->
+        <!-- 影院模块 -->
         <module>guns-cinema</module>
-        <!-- 订单模块（提供者） -->
+        <!-- 订单模块 -->
         <module>guns-order</module>
+        <!-- 支付模块 -->
+        <module>guns-alipay</module>
     </modules>
 
     <parent>
